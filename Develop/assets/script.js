@@ -51,6 +51,27 @@ var alphaSelect = function() {
   }
 }
 
+// added set password length
+var generatePassword = function() {
+
+  var alphaLength = prompt('Password Length? Enter a number between "8" and "200".');
+  alphaLength = parseInt(alphaLength);
+  console.log('Character length is' + alphaLength);
+
+  if (isNaN(alphaLength) || alphaLength < 8 || alphaLength > 200) {
+    return generatePassword();
+  }
+
+  var alphaSet = alphaSelect();
+  var retPassword = "";
+
+  for (var i = 0, n = alphaSet.length; i < alphaLength; i++) {
+    retPassword += alphaSet[Math.floor(Math.random() * n)];
+
+    return retPassword; 
+  }
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 

@@ -2,7 +2,7 @@
 
 var alphaSelect = function() {
 
-  // added lowercase letters to password
+    // added lowercase letters to password
   var alphaLower = confirm('add lowercase letters?');
 
   if (!alphaLower) {
@@ -11,7 +11,7 @@ var alphaSelect = function() {
     alphaLower = "abcdefghijklmnopqrstuvwxyz";
   }
 
-  // added uppercase letters to password
+    // added uppercase letters to password
   var alphaUpper = confirm('add upercase letters?');
 
   if(!alphaUpper) {
@@ -37,7 +37,20 @@ var alphaSelect = function() {
   } else {
     alphaSpec = "!@#$%^&*+";
   }
+
+    // links together the acceptable password types
+  varString = alphaLower + alphaUpper +alphaNum + alphaSpec
+    
+  //acknowledges that at least one member of the string is selected     
+  if (alphaString.length > 0) {
+    console.log("Character string is" + alphaString);
+    return alphaString;
+  } else {
+    window.alert("select at least one type of character,");
+    return alphaSelect();
+  }
 }
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 

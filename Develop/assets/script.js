@@ -28,6 +28,15 @@ var alphaSelect = function() {
   } else {
     alphaNum = "0123456789";
   }
+
+    // added special characters to password
+  var alphaSpec = confirm('add special characters?');
+
+  if (!alphaSpec) {
+    alphaSpec ="";
+  } else {
+    alphaSpec = "!@#$%^&*+";
+  }
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");

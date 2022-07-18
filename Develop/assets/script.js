@@ -3,7 +3,7 @@
 var alphaSelect = function() {
 
     // added lowercase letters to password
-  var alphaLower = confirm('add lowercase letters?');
+  var alphaLower = confirm('add lowercase letters.');
 
   if (!alphaLower) {
     alphaLower ="";
@@ -12,7 +12,7 @@ var alphaSelect = function() {
   }
 
     // added uppercase letters to password
-  var alphaUpper = confirm('add upercase letters?');
+  var alphaUpper = confirm('add upercase letters.');
 
   if(!alphaUpper) {
     alphaUpper = "";
@@ -21,7 +21,7 @@ var alphaSelect = function() {
   }
 
     // added numbers to the password
-  var alphaNum = confirm('add numbers?');
+  var alphaNum = confirm('add numbers.');
 
   if (!alphaNum){
     alphaNum = "";
@@ -30,7 +30,7 @@ var alphaSelect = function() {
   }
 
     // added special characters to password
-  var alphaSpec = confirm('add special characters?');
+  var alphaSpec = confirm('add special characters.');
 
   if (!alphaSpec) {
     alphaSpec ="";

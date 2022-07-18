@@ -3,6 +3,8 @@
 var alphaSelect = function() {
 
   // added lowercase letters to password
+  var alphaLower = confirm('add lowercase letters?');
+
   if (!alphaLower) {
     alphaLower ="";
   } else {
@@ -10,12 +12,21 @@ var alphaSelect = function() {
   }
 
   // added uppercase letters to password
-  var alphaUpper = confirm('Include upercase characters?');
+  var alphaUpper = confirm('add upercase letters?');
 
   if(!alphaUpper) {
     alphaUpper = "";
   } else {
     alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+
+    // added numbers to the password
+  var alphaNum = confirm('add numbers?');
+
+  if (!alphaNum){
+    alphaNum = "";
+  } else {
+    alphaNum = "0123456789";
   }
 }
 // Get references to the #generate element

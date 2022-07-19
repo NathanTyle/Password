@@ -2,7 +2,7 @@
 
 var alphaSelect = function() {
 
-    // added lowercase letters to password
+  // added lowercase letters to password
   var alphaLower = confirm('add lowercase letters.');
 
   if (!alphaLower) {
@@ -11,7 +11,7 @@ var alphaSelect = function() {
     alphaLower = "abcdefghijklmnopqrstuvwxyz";
   }
 
-    // added uppercase letters to password
+  // added uppercase letters to password
   var alphaUpper = confirm('add upercase letters.');
 
   if(!alphaUpper) {
@@ -20,7 +20,7 @@ var alphaSelect = function() {
     alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
 
-    // added numbers to the password
+  // added numbers to the password
   var alphaNum = confirm('add numbers.');
 
   if (!alphaNum){
@@ -29,7 +29,7 @@ var alphaSelect = function() {
     alphaNum = "0123456789";
   }
 
-    // added special characters to password
+  // added special characters to password
   var alphaSpec = confirm('add special characters.');
 
   if (!alphaSpec) {
@@ -38,9 +38,9 @@ var alphaSelect = function() {
     alphaSpec = "!@#$%^&*+";
   }
 
-    // links together the acceptable password types
-  varString = alphaLower + alphaUpper +alphaNum + alphaSpec
-    
+  // links together the acceptable password types
+  var alphaString = alphaLower + alphaUpper + alphaNum + alphaSpec
+  
   //acknowledges that at least one member of the string is selected     
   if (alphaString.length > 0) {
     console.log("Character string is" + alphaString);
@@ -54,35 +54,36 @@ var alphaSelect = function() {
 // added set password length
 var generatePassword = function() {
 
-  var alphaLength = prompt('Password Length? Enter a number between "8" and "128".');
-  alphaLength = parseInt(alphaLength);
-  console.log('Character length is' + alphaLength);
+var alphaLength = prompt('Password Length? Enter a number between "8" and "128".');
+alphaLength = parseInt(alphaLength);
+console.log('Character length is' + alphaLength);
 
-  if (isNaN(alphaLength) || alphaLength < 8 || alphaLength > 128) {
-    return generatePassword();
-  }
-
-  var alphaSet = alphaSelect();
-  var retPassword = "";
-
-  for (var i = 0, n = alphaSet.length; i < alphaLength; i++) {
-    retPassword += alphaSet[Math.floor(Math.random() * n)];
-
-    return retPassword; 
-  }
+if (isNaN(alphaLength) || alphaLength < 8 || alphaLength > 128) {
+  return generatePassword();
 }
 
-// Get references to the #generate element
+var alphaSet = alphaSelect();
+var retPassword = "";
+
+for (var i = 0, n = alphaSet.length; i < alphaLength; i++) {
+  retPassword += alphaSet[Math.floor(Math.random() * n)];
+}
+console.log("Generated password is" + retPassword);
+
+  return retPassword; 
+}
+
+// retrieve references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// add password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+var password = generatePassword();
+var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+passwordText.value = password;
 
 }
 
-// Add event listener to generate button
+// add event listener to generate button
 generateBtn.addEventListener("click", writePassword);

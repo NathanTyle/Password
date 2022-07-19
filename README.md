@@ -2,7 +2,7 @@
 
 ## Description
 
-Provides user wi a randomly generated password upon completion of user perameter input
+Provides user with a randomly generated password upon completion of user perameter input
 
 ###User Story
 AS AN employee with access to sensitive data

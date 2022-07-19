@@ -12,7 +12,7 @@ var alphaSelect = function() {
   }
 
   // added uppercase letters to password
-  var alphaUpper = confirm('add upercase letters.');
+  var alphaUpper = confirm('add uppercase letters.');
 
   if(!alphaUpper) {
     alphaUpper = "";
